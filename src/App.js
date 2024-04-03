@@ -1,6 +1,7 @@
 import './App.css';
 import Navbar from './Navbar';
 import TextForm from './TextForm';
+import About from './About';
 
 function App() {
   //Functional based components.
@@ -11,6 +12,7 @@ function App() {
     <>
      <Navbar title="My Website"/>
      <TextForm heading="Enter the text to modify"/>
+     <About/>
     </>
   );
 }

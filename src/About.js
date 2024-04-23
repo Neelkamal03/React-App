@@ -1,35 +1,40 @@
 import React, { useState } from 'react'
 
-export default function About() {
+export default function About(props) {
    
     const [btntext, setBtntext]=useState("Enable Dark Mode");
 
-    const [myStyle, setMyStyle]=useState({
-        color:'black',
-        backgroundColor:'white'
-    })
+    // const [myStyle, setMyStyle]=useState({
+    //     color:'black',
+    //     backgroundColor:'white'
+    // })
     
-    let toggleSwitch=()=>{
-        if(myStyle.color=='black')
-        {
-            setMyStyle({
-                color:'white',
-                backgroundColor:'black'
-            })
-            setBtntext("Enable Light Mode");
-        }
-        else{
-            setMyStyle({
-                color:'black',
-        backgroundColor:'white'
-            })
-            setBtntext("Enable Dark Mode");
-        }
-    }
+    // let toggleSwitch=()=>{
+    //     if(myStyle.color=='black')
+    //     {
+    //         setMyStyle({
+    //             color:'white',
+    //             backgroundColor:'black'
+    //         })
+    //         setBtntext("Enable Light Mode");
+    //     }
+    //     else{
+    //         setMyStyle({
+    //             color:'black',
+    //     backgroundColor:'white'
+    //         })
+    //         setBtntext("Enable Dark Mode");
+    //     }
+    // }
     // let myStyle={
     //     color:'white',
     //     backgroundColor:'black'
     // }
+    let myStyle={
+      color: props.mode=='tertiary'?'black':'white',
+      backgroundColor: props.mode=='tertiary'?'white':'black'
+    }
+
   return (
     <div style={myStyle}>
         <div className="accordion" id="accordionPanelsStayOpenExample" style={myStyle}>
@@ -70,9 +75,7 @@ export default function About() {
     </div>
   </div>
 </div>
-    <div className="container">
-        <button onClick={toggleSwitch} className="btn btn-primary mx-4 my-4">{btntext}</button>
-    </div>
+    
     </div>
   )
 }

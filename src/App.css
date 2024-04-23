@@ -1,3 +1,8 @@
 .container{
   color:rgb(231, 69, 14);
 }
+.bg-body-dark {
+  background-color: #333; /* Dark background color */
+  color: #fff; /* Light text color */
+  /* Add any other dark mode specific styles here */
+}
